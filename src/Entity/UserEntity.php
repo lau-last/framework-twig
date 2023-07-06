@@ -6,7 +6,6 @@ use Core\Entity\Hydrate;
 
 abstract class UserEntity extends Hydrate
 {
-
     protected int $id;
 
     protected string $name;
