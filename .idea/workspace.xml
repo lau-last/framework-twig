@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9c8e5a-0140-436e-8d23-d0c22e4a150d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Controller/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Entity/Hydrate.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Entity/Hydrate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Http/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Http/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/QueryBuilder/Delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/QueryBuilder/Delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/QueryBuilder/Insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/QueryBuilder/Insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/QueryBuilder/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/QueryBuilder/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/QueryBuilder/Select.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/QueryBuilder/Select.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/QueryBuilder/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/QueryBuilder/Update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Router/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Session/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Session/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ErrorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/DBConnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DBConnect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ArticleEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ArticleEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CommentEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CommentEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/ArticleManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/ArticleManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/EmailManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/EmailManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/FormManager/FormChangePassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/FormManager/FormChangePassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/FormManager/FormConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/FormManager/FormConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/FormManager/FormRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/FormManager/FormRegistration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SessionBlog/SessionBlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SessionBlog/SessionBlog.php" afterDir="false" />
-    </list>
+    <list default="true" id="df9c8e5a-0140-436e-8d23-d0c22e4a150d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +118,7 @@
       <workItem from="1688544093666" duration="16885000" />
       <workItem from="1688567381159" duration="5318000" />
       <workItem from="1688630830010" duration="8575000" />
-      <workItem from="1688639515122" duration="2560000" />
+      <workItem from="1688639515122" duration="3111000" />
     </task>
     <servers />
   </component>
