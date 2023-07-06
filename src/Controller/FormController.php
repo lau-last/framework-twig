@@ -34,7 +34,7 @@ final class FormController extends Controller
     public function logout()
     {
         SessionBlog::destroy();
-        $this->redirect('Location:/');
+        $this->redirect('/');
     }
 
     public function showFormRegistration()
