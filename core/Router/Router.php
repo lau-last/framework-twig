@@ -14,6 +14,10 @@ class Router
         $this->routes = $routes;
     }
 
+    /**
+     * @param Request $request
+     * @return void
+     */
     public function run(Request $request)
     {
         foreach ($this->routes as $route) {

@@ -12,11 +12,18 @@ final class Delete
         $this->table = $table;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return 'DELETE FROM ' . $this->table . ($this->where !== [] ? ' WHERE ' . \implode(' AND ', $this->where) : '');
     }
 
+    /**
+     * @param string ...$where
+     * @return $this
+     */
     public function where(string ...$where): self
     {
         foreach ($where as $arg) {

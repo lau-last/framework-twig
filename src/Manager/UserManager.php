@@ -9,10 +9,15 @@ use Core\QueryBuilder\Insert;
 use Core\QueryBuilder\Manager;
 use Core\QueryBuilder\Select;
 use Core\QueryBuilder\Update;
+use Exception;
 
 final class UserManager extends UserEntity
 {
-
+    /**
+     * @param array $input
+     * @return void
+     * @throws Exception
+     */
     public function doPreRegistration(array $input)
     {
         (new Manager())->queryExecute(
@@ -27,6 +32,9 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @return bool
+     */
     public static function userIsConnected(): bool
     {
         if (!empty(SessionBlog::get('name'))) {
@@ -35,6 +43,9 @@ final class UserManager extends UserEntity
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public static function userIsAdmin(): bool
     {
         if (self::userIsConnected() && SessionBlog::get('role') == 'admin') {
@@ -43,6 +54,10 @@ final class UserManager extends UserEntity
         return false;
     }
 
+    /**
+     * @param $info
+     * @return $this|null
+     */
     public function getUserInfo($info): ?self
     {
         $dataUser = (new Manager())->fetch((
@@ -54,6 +69,9 @@ final class UserManager extends UserEntity
         return new UserManager($dataUser);
     }
 
+    /**
+     * @return array
+     */
     public function getAllUsers(): array
     {
         $data = (new Manager())->fetchAll(new Select('user', ['*']));
@@ -64,6 +82,10 @@ final class UserManager extends UserEntity
         return $users;
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function setUserAdmin($id)
     {
         (new Manager())->queryExecute(
@@ -74,6 +96,10 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function setUserUser($id)
     {
         (new Manager())->queryExecute(
@@ -84,6 +110,10 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function deleteUser($id)
     {
         (new Manager())->queryExecute(
@@ -93,6 +123,10 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @param $token
+     * @return void
+     */
     public function setUserValid($token)
     {
         (new Manager())->queryExecute(
@@ -103,6 +137,10 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @param $token
+     * @return $this|null
+     */
     public function getUserByToken($token): ?self
     {
         $user = (new Manager())->fetch(
@@ -116,6 +154,10 @@ final class UserManager extends UserEntity
         return new UserManager($user);
     }
 
+    /**
+     * @param $token
+     * @return void
+     */
     public function deleteUserByToken($token)
     {
         (new Manager())->queryExecute(
@@ -125,6 +167,11 @@ final class UserManager extends UserEntity
         );
     }
 
+    /**
+     * @param array $input
+     * @param $id
+     * @return void
+     */
     public function updateNewPassword(array $input, $id)
     {
         (new Manager())->queryExecute(

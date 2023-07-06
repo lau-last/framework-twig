@@ -20,6 +20,9 @@ final class Select
         $this->value = $value;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return 'SELECT ' . \implode(', ', $this->value) . ' FROM ' . $this->table
@@ -28,6 +31,10 @@ final class Select
             . ($this->orderBy !== null ? ' ORDER BY ' . $this->orderBy : '');
     }
 
+    /**
+     * @param string ...$join
+     * @return $this
+     */
     public function join(string ...$join): self
     {
         foreach ($join as $arg) {
@@ -37,6 +44,10 @@ final class Select
         return $this;
     }
 
+    /**
+     * @param string ...$where
+     * @return $this
+     */
     public function where(string ...$where): self
     {
         foreach ($where as $arg) {
@@ -45,6 +56,10 @@ final class Select
         return $this;
     }
 
+    /**
+     * @param string $orderBy
+     * @return $this
+     */
     public function orderBy(string $orderBy): self
     {
         $this->orderBy = $orderBy;

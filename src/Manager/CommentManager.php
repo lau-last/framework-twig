@@ -14,22 +14,31 @@ use Core\Session\Session;
 
 final class CommentManager extends CommentEntity
 {
-
-
     private string $author;
 
 
+    /**
+     * @return string
+     */
     public function getAuthor(): string
     {
         return $this->author;
     }
 
+    /**
+     * @param string $author
+     * @return $this
+     */
     public function setAuthor(string $author): self
     {
         $this->author = $author;
         return $this;
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public function getCommentFromArticle($id): array
     {
         $dataComment = (new Manager())->fetchAll((
@@ -44,6 +53,11 @@ final class CommentManager extends CommentEntity
         return $comments;
     }
 
+    /**
+     * @param array $input
+     * @param int $articleId
+     * @return void
+     */
     public function createComment(array $input, int $articleId)
     {
         $userId = SessionBlog::get('id');
@@ -57,6 +71,9 @@ final class CommentManager extends CommentEntity
         );
     }
 
+    /**
+     * @return array
+     */
     public function getAllComments(): array
     {
         $data = (new Manager())->fetchAll(
@@ -71,6 +88,10 @@ final class CommentManager extends CommentEntity
         return $comment;
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function updateCommentSetValid($id)
     {
         (new Manager())->queryExecute(
@@ -81,6 +102,10 @@ final class CommentManager extends CommentEntity
         );
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function deleteComment($id)
     {
         (new Manager())->queryExecute(

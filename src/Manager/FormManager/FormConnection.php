@@ -7,7 +7,10 @@ use App\SessionBlog\SessionBlog;
 
 final class FormConnection
 {
-
+    /**
+     * @param array $input
+     * @return bool
+     */
     public function registerSession(array $input): bool
     {
         if (isset($input['email']) && isset($input['password'])) {

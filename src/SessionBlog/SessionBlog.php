@@ -7,6 +7,10 @@ use Core\Session\Session;
 
 final class SessionBlog extends Session
 {
+    /**
+     * @param UserManager|null $userInfo
+     * @return void
+     */
     public static function init(?UserManager $userInfo = null)
     {
         if ((!empty($userInfo))) {

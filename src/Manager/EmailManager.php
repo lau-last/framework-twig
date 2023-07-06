@@ -7,6 +7,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 final class EmailManager
 {
+    /**
+     * @param $input
+     * @return bool
+     */
     public function doSendEmailContact($input): bool
     {
 
@@ -30,6 +34,10 @@ final class EmailManager
         }
     }
 
+    /**
+     * @param $input
+     * @return bool
+     */
     public function doSendEmailValidation($input): bool
     {
         $userInfo = (new UserManager())->getUserInfo($input['email']);

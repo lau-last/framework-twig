@@ -11,6 +11,10 @@ abstract class Hydrate
         }
     }
 
+    /**
+     * @param $data
+     * @return void
+     */
     public function Hydrate($data)
     {
         foreach ($data as $key => $value) {

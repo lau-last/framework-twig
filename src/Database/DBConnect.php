@@ -8,6 +8,9 @@ final class DBConnect
 {
     private static ?PDO $pdo = null;
 
+    /**
+     * @return PDO
+     */
     public static function getPDO(): PDO
     {
         if (self::$pdo === null) {

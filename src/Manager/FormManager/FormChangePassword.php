@@ -4,18 +4,29 @@ namespace App\Manager\FormManager;
 
 final class FormChangePassword
 {
-
+    /**
+     * @param array $input
+     * @return bool
+     */
     public function checkPassword(array $input): bool
     {
         return (isset($input['password1']) && isset($input['password2']) && $input['password1'] === $input['password2']);
     }
 
+    /**
+     * @param $input
+     * @return bool
+     */
     public function validPassword($input): bool
     {
         $regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
         return preg_match($regex, $input['password1']);
     }
 
+    /**
+     * @param array $input
+     * @return array
+     */
     public function isValid(array $input): array
     {
         $errors = [];

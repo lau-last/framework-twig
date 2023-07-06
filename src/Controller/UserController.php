@@ -7,9 +7,18 @@ use App\Manager\UserManager;
 use App\SessionBlog\SessionBlog;
 use Core\Controller\Controller;
 use Core\Http\Request;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 final class UserController extends Controller
 {
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showAllUser()
     {
         if (UserManager::userIsAdmin()) {
@@ -25,24 +34,43 @@ final class UserController extends Controller
         $this->redirect('/403');
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function setAdmin($id)
     {
         (new UserManager())->setUserAdmin($id);
         $this->redirect('/user-management');
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function setUser($id)
     {
         (new UserManager())->setUserUser($id);
         $this->redirect('/user-management');
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function doDeleteUser($id)
     {
         (new UserManager())->deleteUser($id);
         $this->redirect('/user-management');
     }
 
+    /**
+     * @param $token
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function setValid($token)
     {
 
@@ -76,6 +104,12 @@ final class UserController extends Controller
         }
     }
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showProfile()
     {
         $sessionEmail = SessionBlog::get('email');
@@ -90,6 +124,13 @@ final class UserController extends Controller
         $this->redirect('/403');
     }
 
+    /**
+     * @param $id
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function changePassword($id)
     {
         $request = new Request();

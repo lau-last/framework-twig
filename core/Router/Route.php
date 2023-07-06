@@ -26,6 +26,10 @@ class Route
     }
 
 
+    /**
+     * @param Request $request
+     * @return bool
+     */
     public function matches(Request $request): bool
     {
         $matches = [];
@@ -39,6 +43,9 @@ class Route
         return false;
     }
 
+    /**
+     * @return void
+     */
     public function callAction()
     {
         $controller = new $this->controllerName;
@@ -46,11 +53,17 @@ class Route
         $controller->$action($this->params);
     }
 
+    /**
+     * @return array
+     */
     public function getMethod(): array
     {
         return $this->method;
     }
 
+    /**
+     * @return array
+     */
     public function getParams(): array
     {
         return $this->params;

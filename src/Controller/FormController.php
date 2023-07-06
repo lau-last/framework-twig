@@ -10,15 +10,29 @@ use App\Manager\UserManager;
 use App\SessionBlog\SessionBlog;
 use Core\Controller\Controller;
 use Core\Http\Request;
-
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 final class FormController extends Controller
 {
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showFormConnection()
     {
         $this->render('connection.twig');
     }
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function doConnection()
     {
         $form = new FormConnection();
@@ -28,21 +42,36 @@ final class FormController extends Controller
             $this->render('connection.twig', $data);
             return;
         }
-         $this->redirect('/');
+        $this->redirect('/');
     }
 
+    /**
+     * @return void
+     */
     public function logout()
     {
         SessionBlog::destroy();
         $this->redirect('/');
     }
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showFormRegistration()
     {
         $this->render('registration.twig');
     }
 
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function doRegistration(): void
     {
         $request = new Request();
@@ -65,6 +94,12 @@ final class FormController extends Controller
         $this->render('registration.twig', $data);
     }
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showFormCreationArticle()
     {
         if (UserManager::userIsAdmin()) {
@@ -74,12 +109,25 @@ final class FormController extends Controller
         $this->redirect('/403');
     }
 
+    /**
+     * @param $id
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function showFormModifyArticle($id)
     {
         $data['article'] = (new ArticleManager())->getArticle($id);
         $this->render('modify-article.twig', $data);
     }
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
     public function sendEmail()
     {
         $request = new Request();
