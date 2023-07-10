@@ -23,7 +23,7 @@ final class UserController extends Controller
      */
     public function showAllUser(): void
     {
-        if (UserManager::userIsAdmin()) {
+        if (UserManager::userIsAdmin() === true) {
             $data = [
                 'users' => (new UserManager())->getAllUsers(),
                 'notificationUserManagement' => \App\Manager\Notification::notificationUserManagement()
@@ -80,7 +80,7 @@ final class UserController extends Controller
         $data = [];
         $user = (new UserManager())->getUserByToken($token);
 
-        if (empty($user)) {
+        if (empty($user) === true) {
             $data['error'] = 'Unknown token';
             $this->render('connection.twig', $data);
             return;
@@ -119,7 +119,7 @@ final class UserController extends Controller
         $data = [];
         $sessionEmail = SessionBlog::get('email');
         $userSession = (new UserManager())->getUserInfo($sessionEmail);
-        if (UserManager::userIsConnected()) {
+        if (UserManager::userIsConnected() === true) {
             $data['userSession'] = $userSession;
             $this->render('profile.twig', $data);
             return;
@@ -142,7 +142,7 @@ final class UserController extends Controller
         $errors = $password->isValid($request->getPost());
         $sessionEmail = SessionBlog::get('email');
         $userSession = (new UserManager())->getUserInfo($sessionEmail);
-        if (!empty($errors)) {
+        if (empty($errors) === false) {
             $data = [
                 'errors' => $errors,
                 'userSession' => $userSession,

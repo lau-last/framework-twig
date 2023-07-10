@@ -40,7 +40,7 @@ final class UserManager extends UserEntity
      */
     public static function userIsConnected(): bool
     {
-        if (!empty(SessionBlog::get('name'))) {
+        if (empty(SessionBlog::get('name')) === false) {
             return true;
         }
         return false;
@@ -52,7 +52,7 @@ final class UserManager extends UserEntity
      */
     public static function userIsAdmin(): bool
     {
-        if (self::userIsConnected() && SessionBlog::get('role') == 'admin') {
+        if (self::userIsConnected() === true && SessionBlog::get('role') == 'admin') {
             return true;
         }
         return false;
@@ -68,7 +68,7 @@ final class UserManager extends UserEntity
         $dataUser = (new Manager())->fetch((
         new Select('user', ['*']))
             ->where('email = :email'), ['email' => $info]);
-        if (empty($dataUser)) {
+        if (empty($dataUser) === true) {
             return null;
         }
         return new UserManager($dataUser);
@@ -159,7 +159,7 @@ final class UserManager extends UserEntity
                 ->where('token = :token'),
             ['token' => $token[0]]
         );
-        if (empty($user)) {
+        if (empty($user) === true) {
             return null;
         }
         return new UserManager($user);
