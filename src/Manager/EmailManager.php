@@ -19,7 +19,7 @@ final class EmailManager
             $mail = new PHPMailer(true);
             $mail->isSMTP();
             $mail->Host = MAIL_HOST;
-            $mail->SMTPAuth = MAIL_SMTP_AUTH;
+            $mail->SMTPAuth = true;
             $mail->Port = MAIL_PORT;
             $mail->Username = MAIL_USERNAME;
             $mail->Password = MAIL_PASSWORD;
@@ -46,12 +46,12 @@ final class EmailManager
         $message = '
         <h1>Hello and welcome to the blog !!</h1>
         <p>Here is the link to validate your registration. After one hour from receiving it, the link will no longer be valid. You will need to register again.</p>
-        <a href="http://localhost:8888/confirm-registration/' . $userInfo->getToken() . '" target="_blank">Validate your account by clicking on this link.</a>';
+        <a href="http://localhost:8000/confirm-registration/' . $userInfo->getToken() . '" target="_blank">Validate your account by clicking on this link.</a>';
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
             $mail->Host = MAIL_HOST;
-            $mail->SMTPAuth = MAIL_SMTP_AUTH;
+            $mail->SMTPAuth = true;
             $mail->Port = MAIL_PORT;
             $mail->Username = MAIL_USERNAME;
             $mail->Password = MAIL_PASSWORD;
