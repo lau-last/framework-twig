@@ -3,8 +3,8 @@ define('ROOT', \dirname(__DIR__));
 const TEMPLATE = 'base';
 const VIEW_PATH = ROOT . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'View' . DIRECTORY_SEPARATOR;
 
-//To change
-//Mailtrap or imitate
+// To change
+// Mailtrap or imitate
 const MAIL_HOST = 'smtp.imitate.email';
 const MAIL_PORT = 587;
 const MAIL_USERNAME = '8231b5d9-f949-474a-a38b-0189401d8889';
