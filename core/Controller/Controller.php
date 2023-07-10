@@ -12,8 +12,14 @@ use Twig\Loader\FilesystemLoader;
 abstract class Controller
 {
 
+    /**
+     * @var FilesystemLoader
+     */
     private FilesystemLoader $loader;
 
+    /**
+     * @var Environment
+     */
     protected Environment $twig;
 
 

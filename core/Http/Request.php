@@ -5,8 +5,14 @@ namespace Core\Http;
 final class Request
 {
 
+    /**
+     * @var array
+     */
     private array $server;
 
+    /**
+     * @var array|null
+     */
     private ?array $post;
 
 

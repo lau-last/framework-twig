@@ -5,8 +5,14 @@ namespace Core\QueryBuilder;
 final class Delete
 {
 
+    /**
+     * @var string
+     */
     private string $table;
 
+    /**
+     * @var array
+     */
     private array $where = [];
 
 

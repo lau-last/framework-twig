@@ -14,6 +14,9 @@ use Core\Session\Session;
 final class ArticleManager extends ArticleEntity
 {
 
+    /**
+     * @var string
+     */
     private string $author;
 
 
