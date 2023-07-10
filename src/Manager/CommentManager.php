@@ -62,7 +62,7 @@ final class CommentManager extends CommentEntity
      * @param int $articleId
      * @return void
      */
-    public function createComment(array $input, int $articleId)
+    public function createComment(array $input, int $articleId): void
     {
         $userId = SessionBlog::get('id');
         (new Manager())->queryExecute(
@@ -98,7 +98,7 @@ final class CommentManager extends CommentEntity
      * @param $id
      * @return void
      */
-    public function updateCommentSetValid($id)
+    public function updateCommentSetValid($id): void
     {
         (new Manager())->queryExecute(
             (new Update('comment AS c'))
@@ -113,7 +113,7 @@ final class CommentManager extends CommentEntity
      * @param $id
      * @return void
      */
-    public function deleteComment($id)
+    public function deleteComment($id): void
     {
         (new Manager())->queryExecute(
             (new Delete('comment'))

@@ -21,15 +21,13 @@ final class UserController extends Controller
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function showAllUser()
+    public function showAllUser(): void
     {
         if (UserManager::userIsAdmin()) {
-
             $data = [
                 'users' => (new UserManager())->getAllUsers(),
                 'notificationUserManagement' => \App\Manager\Notification::notificationUserManagement()
             ];
-
             $this->render('management-user.twig', $data);
             return;
         }
@@ -41,7 +39,7 @@ final class UserController extends Controller
      * @param $id
      * @return void
      */
-    public function setAdmin($id)
+    public function setAdmin($id): void
     {
         (new UserManager())->setUserAdmin($id);
         $this->redirect('/user-management');
@@ -52,7 +50,7 @@ final class UserController extends Controller
      * @param $id
      * @return void
      */
-    public function setUser($id)
+    public function setUser($id): void
     {
         (new UserManager())->setUserUser($id);
         $this->redirect('/user-management');
@@ -63,7 +61,7 @@ final class UserController extends Controller
      * @param $id
      * @return void
      */
-    public function doDeleteUser($id)
+    public function doDeleteUser($id): void
     {
         (new UserManager())->deleteUser($id);
         $this->redirect('/user-management');
@@ -77,7 +75,7 @@ final class UserController extends Controller
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function setValid($token)
+    public function setValid($token): void
     {
 
         $user = (new UserManager())->getUserByToken($token);
@@ -95,7 +93,6 @@ final class UserController extends Controller
         }
 
         $exp = $user->getExpirationDate();
-
         if ($exp > strtotime('now')) {
             (new UserManager())->setUserValid($token);
             $data['error'] = 'Your account has been successfully validated';
@@ -117,13 +114,11 @@ final class UserController extends Controller
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function showProfile()
+    public function showProfile(): void
     {
         $sessionEmail = SessionBlog::get('email');
         $userSession = (new UserManager())->getUserInfo($sessionEmail);
-
         if (UserManager::userIsConnected()) {
-
             $data['userSession'] = $userSession;
             $this->render('profile.twig', $data);
             return;
@@ -139,14 +134,13 @@ final class UserController extends Controller
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function changePassword($id)
+    public function changePassword($id): void
     {
         $request = new Request();
         $password = new FormChangePassword();
         $errors = $password->isValid($request->getPost());
         $sessionEmail = SessionBlog::get('email');
         $userSession = (new UserManager())->getUserInfo($sessionEmail);
-
         if (!empty($errors)) {
             $data = [
                 'errors' => $errors,
@@ -155,9 +149,7 @@ final class UserController extends Controller
             $this->render('profile.twig', $data);
             return;
         }
-
         (new UserManager())->updateNewPassword($request->getPost(), $id);
-
         $data = [
             'errors' => $errors,
             'userSession' => $userSession,

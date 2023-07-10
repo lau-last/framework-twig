@@ -10,6 +10,7 @@ use Twig\Error\SyntaxError;
 final class ErrorController extends Controller
 {
 
+
     /**
      * @return void
      * @throws LoaderError

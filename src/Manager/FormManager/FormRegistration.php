@@ -5,6 +5,7 @@ namespace App\Manager\FormManager;
 final class FormRegistration
 {
 
+
     /**
      * @param array $input
      * @return bool

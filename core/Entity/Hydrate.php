@@ -5,6 +5,10 @@ namespace Core\Entity;
 abstract class Hydrate
 {
 
+
+    /**
+     * @param array|null $data
+     */
     public function __construct(?array $data = [])
     {
         if (!empty($data)) {

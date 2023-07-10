@@ -10,6 +10,9 @@ final class Delete
     private array $where = [];
 
 
+    /**
+     * @param string $table
+     */
     public function __construct(string $table)
     {
         $this->table = $table;

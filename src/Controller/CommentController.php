@@ -33,12 +33,10 @@ final class CommentController extends Controller
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function showAll()
+    public function showAll(): void
     {
         if (UserManager::userIsAdmin()) {
-
             $data['comments'] = (new CommentManager())->getAllComments();
-
             $this->render('management-comment.twig', $data);
             return;
         }
@@ -50,7 +48,7 @@ final class CommentController extends Controller
      * @param $id
      * @return void
      */
-    public function setValidComment($id)
+    public function setValidComment($id): void
     {
         (new CommentManager())->updateCommentSetValid($id);
         $this->redirect('/comment-management');
@@ -61,7 +59,7 @@ final class CommentController extends Controller
      * @param $id
      * @return void
      */
-    public function doDeleteComment($id)
+    public function doDeleteComment($id): void
     {
         (new CommentManager())->deleteComment($id);
         $this->redirect('/comment-management');

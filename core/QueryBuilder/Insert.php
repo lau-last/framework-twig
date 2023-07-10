@@ -10,6 +10,10 @@ final class Insert
     private array $value;
 
 
+    /**
+     * @param string $table
+     * @param array $value
+     */
     public function __construct(string $table, array $value)
     {
         $this->table = $table;

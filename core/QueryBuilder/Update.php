@@ -12,6 +12,9 @@ final class Update
     private array $where;
 
 
+    /**
+     * @param string $table
+     */
     public function __construct(string $table)
     {
         $this->table = $table;
