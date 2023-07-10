@@ -12,7 +12,7 @@
                 <p class="card-text">{{ article.getContent }}</p>
             </div>
             <div class="card-footer text-white headband-bottom">
-                Posted by {{ article.getAuthor }} at {{ article.getDate }}
+                Posted by {{article.getAuthor}}. Last update at {{article.getDate}}
             </div>
         </div>
         {% if userIsConnected %}

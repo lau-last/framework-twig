@@ -109,7 +109,7 @@ final class ArticleManager extends ArticleEntity
         $userId = SessionBlog::get('id');
         (new Manager())->queryExecute(
             (new Update('article'))
-                ->set('title = :title, head = :head, content = :content, user_id = :user_id')
+                ->set('title = :title, head = :head, content = :content, user_id = :user_id, date = NOW()')
                 ->where('id = :id'),
             [
                 'title' => $input['title'],
