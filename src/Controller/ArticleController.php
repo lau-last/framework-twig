@@ -23,6 +23,7 @@ final class ArticleController extends Controller
      */
     public function showAll(): void
     {
+        $data = [];
         $data['articles'] = (new ArticleManager())->getArticles();
         $data['notificationArticleManagement'] = \App\Manager\Notification::notificationArticleManagement();
         $this->render('show-all-articles.twig', $data);
@@ -38,6 +39,7 @@ final class ArticleController extends Controller
      */
     public function show($id): void
     {
+        $data = [];
         $data['article'] = (new ArticleManager())->getArticle($id);
         $data['comments'] = (new CommentManager())->getCommentFromArticle($id);
         $this->render('show-article.twig', $data);
@@ -64,6 +66,7 @@ final class ArticleController extends Controller
     public function modifyArticle(): void
     {
         if (UserManager::userIsAdmin()) {
+            $data = [];
             $data['articles'] = (new ArticleManager())->getArticles();
             $data['notificationArticleManagement'] = \App\Manager\Notification::notificationArticleManagement();
             $this->render('management-article.twig', $data);

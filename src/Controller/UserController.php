@@ -77,7 +77,7 @@ final class UserController extends Controller
      */
     public function setValid($token): void
     {
-
+        $data = [];
         $user = (new UserManager())->getUserByToken($token);
 
         if (empty($user)) {
@@ -116,6 +116,7 @@ final class UserController extends Controller
      */
     public function showProfile(): void
     {
+        $data = [];
         $sessionEmail = SessionBlog::get('email');
         $userSession = (new UserManager())->getUserInfo($sessionEmail);
         if (UserManager::userIsConnected()) {

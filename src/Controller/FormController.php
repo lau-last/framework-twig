@@ -41,6 +41,7 @@ final class FormController extends Controller
         $form = new FormConnection();
         $request = new Request();
         if (!$form->registerSession($request->getPost())) {
+            $data = [];
             $data['error'] = 'The login or password is incorrect';
             $this->render('connection.twig', $data);
             return;
@@ -83,6 +84,7 @@ final class FormController extends Controller
         $request = new Request();
         $registration = new FormRegistration();
         $errors = $registration->isValid($request->getPost());
+        $data = [];
         if (!empty($errors)) {
             $data['errors'] = $errors;
             $this->render('registration.twig', $data);
@@ -122,6 +124,7 @@ final class FormController extends Controller
      */
     public function showFormModifyArticle($id): void
     {
+        $data = [];
         $data['article'] = (new ArticleManager())->getArticle($id);
         $this->render('modify-article.twig', $data);
     }
@@ -135,6 +138,7 @@ final class FormController extends Controller
      */
     public function sendEmail(): void
     {
+        $data = [];
         $request = new Request();
         $messages = (new EmailManager())->doSendEmailContact($request->getPost()) ? 'Message has been sent' : 'Message could not be sent';
         $data['messages'] = $messages;
