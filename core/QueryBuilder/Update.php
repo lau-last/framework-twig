@@ -11,10 +11,12 @@ final class Update
 
     private array $where;
 
+
     public function __construct(string $table)
     {
         $this->table = $table;
     }
+
 
     /**
      * @return string
@@ -23,6 +25,7 @@ final class Update
     {
         return 'UPDATE ' . $this->table . ' SET ' . $this->set . ($this->where !== [] ? ' WHERE ' . \implode(' AND ', $this->where) : '');
     }
+
 
     /**
      * @param string $set
@@ -33,6 +36,7 @@ final class Update
         $this->set = $set;
         return $this;
     }
+
 
     /**
      * @param string ...$where
@@ -45,4 +49,6 @@ final class Update
         }
         return $this;
     }
+
+
 }

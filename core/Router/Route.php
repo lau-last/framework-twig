@@ -8,6 +8,7 @@ class Route
 {
 
     private string $path;
+
     private string $controllerName;
 
     private string $action;
@@ -43,6 +44,7 @@ class Route
         return false;
     }
 
+
     /**
      * @return void
      */
@@ -53,6 +55,7 @@ class Route
         $controller->$action($this->params);
     }
 
+
     /**
      * @return array
      */
@@ -61,6 +64,7 @@ class Route
         return $this->method;
     }
 
+
     /**
      * @return array
      */
@@ -68,5 +72,6 @@ class Route
     {
         return $this->params;
     }
+
 
 }

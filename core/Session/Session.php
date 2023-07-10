@@ -16,17 +16,19 @@ abstract class Session
         }
     }
 
+
     /**
      * @param $key
      * @return string|null
      */
-    public static function get($key) : ?string
+    public static function get($key): ?string
     {
         if (isset($_SESSION[$key])) {
             return $_SESSION[$key];
         }
         return null;
     }
+
 
     /**
      * @param $key
@@ -38,6 +40,7 @@ abstract class Session
         $_SESSION[$key] = $value;
     }
 
+
     /**
      * @param $key
      * @return void
@@ -46,6 +49,7 @@ abstract class Session
     {
         unset($_SESSION[$key]);
     }
+
 
     /**
      * @return void
@@ -56,5 +60,6 @@ abstract class Session
             \session_destroy();
         }
     }
+
 
 }

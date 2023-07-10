@@ -25,6 +25,7 @@ final class Manager
         return $stmt;
     }
 
+
     /**
      * @param string $query
      * @param array $param
@@ -36,6 +37,7 @@ final class Manager
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
     }
 
+
     /**
      * @param string $query
      * @param array $param
@@ -46,5 +48,6 @@ final class Manager
         $stmt = $this->queryExecute($query, $param);
         return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
     }
+
 
 }

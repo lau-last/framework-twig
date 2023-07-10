@@ -13,7 +13,9 @@ use Core\Session\Session;
 
 final class ArticleManager extends ArticleEntity
 {
+
     private string $author;
+
 
     /**
      * @return string
@@ -22,6 +24,7 @@ final class ArticleManager extends ArticleEntity
     {
         return $this->author;
     }
+
 
     /**
      * @param string $author
@@ -33,6 +36,7 @@ final class ArticleManager extends ArticleEntity
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -41,6 +45,7 @@ final class ArticleManager extends ArticleEntity
         return '/articles/' . $this->id;
     }
 
+
     /**
      * @return string
      */
@@ -48,6 +53,7 @@ final class ArticleManager extends ArticleEntity
     {
         return \substr($this->content, 0, 250) . '...';
     }
+
 
     /**
      * @return array
@@ -66,6 +72,7 @@ final class ArticleManager extends ArticleEntity
         return $articles;
     }
 
+
     /**
      * @param $id
      * @return $this
@@ -80,6 +87,7 @@ final class ArticleManager extends ArticleEntity
         );
         return new ArticleManager($dataArticle);
     }
+
 
     /**
      * @param array $input
@@ -98,6 +106,7 @@ final class ArticleManager extends ArticleEntity
             ]
         );
     }
+
 
     /**
      * @param array $input
@@ -121,6 +130,7 @@ final class ArticleManager extends ArticleEntity
         );
     }
 
+
     /**
      * @param $id
      * @return void
@@ -133,4 +143,6 @@ final class ArticleManager extends ArticleEntity
             ['id' => $id[0]]
         );
     }
+
+
 }

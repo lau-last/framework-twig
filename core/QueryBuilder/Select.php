@@ -4,6 +4,7 @@ namespace Core\QueryBuilder;
 
 final class Select
 {
+
     private string $table;
 
     private array $value;
@@ -11,6 +12,7 @@ final class Select
     private ?array $join = [];
 
     private ?array $where = [];
+
     private ?string $orderBy = null;
 
 
@@ -19,6 +21,7 @@ final class Select
         $this->table = $table;
         $this->value = $value;
     }
+
 
     /**
      * @return string
@@ -30,6 +33,7 @@ final class Select
             . ($this->where !== [] ? ' WHERE ' . \implode(' AND ', $this->where) : '')
             . ($this->orderBy !== null ? ' ORDER BY ' . $this->orderBy : '');
     }
+
 
     /**
      * @param string ...$join
@@ -44,6 +48,7 @@ final class Select
         return $this;
     }
 
+
     /**
      * @param string ...$where
      * @return $this
@@ -56,6 +61,7 @@ final class Select
         return $this;
     }
 
+
     /**
      * @param string $orderBy
      * @return $this
@@ -65,5 +71,6 @@ final class Select
         $this->orderBy = $orderBy;
         return $this;
     }
+
 
 }

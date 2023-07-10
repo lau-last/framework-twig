@@ -7,6 +7,7 @@ use Core\Session\Session;
 
 final class Notification
 {
+
     /**
      * @return string
      */
@@ -18,6 +19,7 @@ final class Notification
         ));
 
     }
+
 
     /**
      * @return string
@@ -43,6 +45,7 @@ final class Notification
         );
     }
 
+
     /**
      * @return string
      */
@@ -55,6 +58,7 @@ final class Notification
         );
     }
 
+
     /**
      * @return string
      */
@@ -65,5 +69,6 @@ final class Notification
         }
         return 'Offline';
     }
+
 
 }

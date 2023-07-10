@@ -13,6 +13,7 @@ use Exception;
 
 final class UserManager extends UserEntity
 {
+
     /**
      * @param array $input
      * @return void
@@ -23,14 +24,15 @@ final class UserManager extends UserEntity
         (new Manager())->queryExecute(
             new Insert('user', ['name', 'password', 'email', 'token', 'expiration_date']),
             [
-            'name' => $input['name'],
-            'password' => password_hash($input['password1'], PASSWORD_BCRYPT),
-            'email' => $input['email'],
-            'token' => bin2hex(random_bytes(32)),
-            'expiration_date' => strtotime('1 hour')
-        ]
+                'name' => $input['name'],
+                'password' => password_hash($input['password1'], PASSWORD_BCRYPT),
+                'email' => $input['email'],
+                'token' => bin2hex(random_bytes(32)),
+                'expiration_date' => strtotime('1 hour')
+            ]
         );
     }
+
 
     /**
      * @return bool
@@ -43,6 +45,7 @@ final class UserManager extends UserEntity
         return false;
     }
 
+
     /**
      * @return bool
      */
@@ -53,6 +56,7 @@ final class UserManager extends UserEntity
         }
         return false;
     }
+
 
     /**
      * @param $info
@@ -69,6 +73,7 @@ final class UserManager extends UserEntity
         return new UserManager($dataUser);
     }
 
+
     /**
      * @return array
      */
@@ -81,6 +86,7 @@ final class UserManager extends UserEntity
         }
         return $users;
     }
+
 
     /**
      * @param $id
@@ -96,6 +102,7 @@ final class UserManager extends UserEntity
         );
     }
 
+
     /**
      * @param $id
      * @return void
@@ -110,6 +117,7 @@ final class UserManager extends UserEntity
         );
     }
 
+
     /**
      * @param $id
      * @return void
@@ -122,6 +130,7 @@ final class UserManager extends UserEntity
             ['id' => $id[0]]
         );
     }
+
 
     /**
      * @param $token
@@ -137,6 +146,7 @@ final class UserManager extends UserEntity
         );
     }
 
+
     /**
      * @param $token
      * @return $this|null
@@ -145,7 +155,7 @@ final class UserManager extends UserEntity
     {
         $user = (new Manager())->fetch(
             (new Select('user', ['*']))
-                 ->where('token = :token'),
+                ->where('token = :token'),
             ['token' => $token[0]]
         );
         if (empty($user)) {
@@ -153,6 +163,7 @@ final class UserManager extends UserEntity
         }
         return new UserManager($user);
     }
+
 
     /**
      * @param $token
@@ -166,6 +177,7 @@ final class UserManager extends UserEntity
             ['token' => $token[0]]
         );
     }
+
 
     /**
      * @param array $input

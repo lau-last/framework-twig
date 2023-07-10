@@ -6,6 +6,7 @@ use Core\Entity\Hydrate;
 
 abstract class UserEntity extends Hydrate
 {
+
     protected int $id;
 
     protected string $name;
@@ -33,6 +34,7 @@ abstract class UserEntity extends Hydrate
         return $this->expirationDate;
     }
 
+
     /**
      * @param string $expirationDate
      * @return $this
@@ -51,6 +53,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->token;
     }
+
 
     /**
      * @param string $token
@@ -71,6 +74,7 @@ abstract class UserEntity extends Hydrate
         return $this->date;
     }
 
+
     /**
      * @param string $date
      * @return $this
@@ -81,6 +85,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return int
      */
@@ -88,6 +93,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->id;
     }
+
 
     /**
      * @param int $id
@@ -99,6 +105,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -106,6 +113,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->name;
     }
+
 
     /**
      * @param string $name
@@ -117,6 +125,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -124,6 +133,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->password;
     }
+
 
     /**
      * @param string $password
@@ -135,6 +145,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -142,6 +153,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->email;
     }
+
 
     /**
      * @param string $email
@@ -153,6 +165,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -160,6 +173,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->role;
     }
+
 
     /**
      * @param string $role
@@ -171,6 +185,7 @@ abstract class UserEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -178,6 +193,7 @@ abstract class UserEntity extends Hydrate
     {
         return $this->validation;
     }
+
 
     /**
      * @param string $validation
@@ -188,4 +204,6 @@ abstract class UserEntity extends Hydrate
         $this->validation = $validation;
         return $this;
     }
+
+
 }

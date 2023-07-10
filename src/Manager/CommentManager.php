@@ -14,6 +14,7 @@ use Core\Session\Session;
 
 final class CommentManager extends CommentEntity
 {
+
     private string $author;
 
 
@@ -25,6 +26,7 @@ final class CommentManager extends CommentEntity
         return $this->author;
     }
 
+
     /**
      * @param string $author
      * @return $this
@@ -34,6 +36,7 @@ final class CommentManager extends CommentEntity
         $this->author = $author;
         return $this;
     }
+
 
     /**
      * @param $id
@@ -53,6 +56,7 @@ final class CommentManager extends CommentEntity
         return $comments;
     }
 
+
     /**
      * @param array $input
      * @param int $articleId
@@ -71,6 +75,7 @@ final class CommentManager extends CommentEntity
         );
     }
 
+
     /**
      * @return array
      */
@@ -88,6 +93,7 @@ final class CommentManager extends CommentEntity
         return $comment;
     }
 
+
     /**
      * @param $id
      * @return void
@@ -102,6 +108,7 @@ final class CommentManager extends CommentEntity
         );
     }
 
+
     /**
      * @param $id
      * @return void
@@ -114,5 +121,6 @@ final class CommentManager extends CommentEntity
             ['id' => $id[0]]
         );
     }
+
 
 }

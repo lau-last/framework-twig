@@ -6,7 +6,9 @@ use PDO;
 
 final class DBConnect
 {
+
     private static ?PDO $pdo = null;
+
 
     /**
      * @return PDO
@@ -18,4 +20,6 @@ final class DBConnect
         }
         return self::$pdo;
     }
+
+
 }

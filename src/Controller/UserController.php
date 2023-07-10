@@ -13,6 +13,8 @@ use Twig\Error\SyntaxError;
 
 final class UserController extends Controller
 {
+
+
     /**
      * @return void
      * @throws LoaderError
@@ -34,6 +36,7 @@ final class UserController extends Controller
         $this->redirect('/403');
     }
 
+
     /**
      * @param $id
      * @return void
@@ -43,6 +46,7 @@ final class UserController extends Controller
         (new UserManager())->setUserAdmin($id);
         $this->redirect('/user-management');
     }
+
 
     /**
      * @param $id
@@ -54,6 +58,7 @@ final class UserController extends Controller
         $this->redirect('/user-management');
     }
 
+
     /**
      * @param $id
      * @return void
@@ -63,6 +68,7 @@ final class UserController extends Controller
         (new UserManager())->deleteUser($id);
         $this->redirect('/user-management');
     }
+
 
     /**
      * @param $token
@@ -104,6 +110,7 @@ final class UserController extends Controller
         }
     }
 
+
     /**
      * @return void
      * @throws LoaderError
@@ -123,6 +130,7 @@ final class UserController extends Controller
         }
         $this->redirect('/403');
     }
+
 
     /**
      * @param $id
@@ -156,4 +164,6 @@ final class UserController extends Controller
         ];
         $this->render('profile.twig', $data);
     }
+
+
 }

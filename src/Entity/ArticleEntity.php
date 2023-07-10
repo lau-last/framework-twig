@@ -6,6 +6,7 @@ use Core\Entity\Hydrate;
 
 abstract class ArticleEntity extends Hydrate
 {
+
     protected int $id;
 
     protected string $title;
@@ -15,7 +16,9 @@ abstract class ArticleEntity extends Hydrate
     protected string $content;
 
     protected string $date;
+
     protected int $userId;
+
 
     /**
      * @return int
@@ -24,6 +27,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->id;
     }
+
 
     /**
      * @param int $id
@@ -35,6 +39,7 @@ abstract class ArticleEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -42,6 +47,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->title;
     }
+
 
     /**
      * @param string $title
@@ -53,6 +59,7 @@ abstract class ArticleEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -60,6 +67,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->head;
     }
+
 
     /**
      * @param string $head
@@ -71,6 +79,7 @@ abstract class ArticleEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -78,6 +87,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->content;
     }
+
 
     /**
      * @param string $content
@@ -89,6 +99,7 @@ abstract class ArticleEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -96,6 +107,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->date;
     }
+
 
     /**
      * @param string $date
@@ -107,6 +119,7 @@ abstract class ArticleEntity extends Hydrate
         return $this;
     }
 
+
     /**
      * @return int
      */
@@ -114,6 +127,7 @@ abstract class ArticleEntity extends Hydrate
     {
         return $this->userId;
     }
+
 
     /**
      * @param int $userId
@@ -124,4 +138,6 @@ abstract class ArticleEntity extends Hydrate
         $this->userId = $userId;
         return $this;
     }
+
+
 }

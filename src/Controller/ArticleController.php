@@ -13,19 +13,22 @@ use Twig\Error\SyntaxError;
 
 final class ArticleController extends Controller
 {
+
+
     /**
      * @return void
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function showAll()
+    public function showAll(): void
     {
         $data['articles'] = (new ArticleManager())->getArticles();
         $data['notificationArticleManagement'] = \App\Manager\Notification::notificationArticleManagement();
 
         $this->render('show-all-articles.twig', $data);
     }
+
 
     /**
      * @param $id
@@ -42,6 +45,7 @@ final class ArticleController extends Controller
         $this->render('show-article.twig', $data);
     }
 
+
     /**
      * @return void
      */
@@ -52,6 +56,7 @@ final class ArticleController extends Controller
         $this->redirect('/articles');
 
     }
+
 
     /**
      * @return void
@@ -72,6 +77,7 @@ final class ArticleController extends Controller
         $this->redirect('/403');
     }
 
+
     /**
      * @param $id
      * @return void
@@ -82,6 +88,7 @@ final class ArticleController extends Controller
         (new ArticleManager())->updateArticle($request->getPost(), $id);
         $this->redirect('/article-management');
     }
+
 
     /**
      * @param $id

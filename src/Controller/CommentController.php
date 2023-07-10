@@ -12,17 +12,20 @@ use Twig\Error\SyntaxError;
 
 final class CommentController extends Controller
 {
+
+
     /**
      * @param $articleId
      * @return void
      */
-    public function postComment($articleId)
+    public function postComment($articleId): void
     {
         $articleId = implode($articleId);
         $request = new Request();
         (new CommentManager())->createComment($request->getPost(), $articleId);
         $this->redirect("/articles/$articleId");
     }
+
 
     /**
      * @return void
@@ -42,6 +45,7 @@ final class CommentController extends Controller
         $this->redirect('/403');
     }
 
+
     /**
      * @param $id
      * @return void
@@ -52,6 +56,7 @@ final class CommentController extends Controller
         $this->redirect('/comment-management');
     }
 
+
     /**
      * @param $id
      * @return void
@@ -61,4 +66,6 @@ final class CommentController extends Controller
         (new CommentManager())->deleteComment($id);
         $this->redirect('/comment-management');
     }
+
+
 }

@@ -4,6 +4,7 @@ namespace App\Manager\FormManager;
 
 final class FormChangePassword
 {
+
     /**
      * @param array $input
      * @return bool
@@ -12,6 +13,7 @@ final class FormChangePassword
     {
         return (isset($input['password1']) && isset($input['password2']) && $input['password1'] === $input['password2']);
     }
+
 
     /**
      * @param $input
@@ -22,6 +24,7 @@ final class FormChangePassword
         $regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
         return preg_match($regex, $input['password1']);
     }
+
 
     /**
      * @param array $input
@@ -36,9 +39,11 @@ final class FormChangePassword
         if ($this->validPassword($input) === false) {
             $errors['regex'] = 'Your password must contain at least 8 characters, one uppercase, one lowercase and one special character';
         }
-        if($this->checkPassword($input) === true && $this->validPassword($input) === true) {
+        if ($this->checkPassword($input) === true && $this->validPassword($input) === true) {
             $errors['good'] = 'Your password has been successfully updated';
         }
         return $errors;
     }
+
+
 }

@@ -4,21 +4,23 @@ namespace Core\Entity;
 
 abstract class Hydrate
 {
-    public function __construct(?array $data=[])
+
+    public function __construct(?array $data = [])
     {
         if (!empty($data)) {
             $this->Hydrate($data);
         }
     }
 
+
     /**
      * @param $data
      * @return void
      */
-    public function Hydrate($data)
+    public function Hydrate($data): void
     {
         foreach ($data as $key => $value) {
-            if (strstr($key, '_')){
+            if (str_contains($key, '_')) {
                 $key = explode('_', $key, 2);
                 $key = ($key[0] . ucfirst($key[1]));
             }
@@ -28,4 +30,6 @@ abstract class Hydrate
             }
         }
     }
+
+
 }

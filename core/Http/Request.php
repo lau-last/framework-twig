@@ -5,7 +5,6 @@ namespace Core\Http;
 final class Request
 {
 
-
     private array $server;
 
     private ?array $post;
@@ -17,6 +16,7 @@ final class Request
         $this->post = $_POST;
     }
 
+
     /**
      * @return string
      */
@@ -24,6 +24,7 @@ final class Request
     {
         return $this->server['REQUEST_URI'];
     }
+
 
     /**
      * @return array|null
