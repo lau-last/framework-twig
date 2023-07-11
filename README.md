@@ -9,7 +9,7 @@ To install the project on your machine, follow these steps:
 - Install a PHP / MySQL / Apache environment *(e.g.,[MAMP](https://www.mamp.info/en/))*
 - Install  [Composer](https://getcomposer.org/download/)
 - Clone the project into a directory and run: composer install.
-- Create the database via *public/UML/framework.sql*
+- Create the database via *public/diagrams/framework.sql*
 
   >This script will create a "framework" database with a demo dataset. User access information is available at the beginning of this script.
 

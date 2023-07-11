@@ -19,7 +19,7 @@ final class DBConnect
     public static function getPDO(): PDO
     {
         if (self::$pdo === null) {
-            self::$pdo = new PDO(DATABASE_DNS, DATABASE_USER, DATABASE_PASSWORD);
+            self::$pdo = new PDO(getenv("DATABASE_DNS"), getenv("DATABASE_USER"), getenv("DATABASE_PASSWORD"));
         }
         return self::$pdo;
     }
