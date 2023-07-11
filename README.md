@@ -13,7 +13,7 @@ To install the project on your machine, follow these steps:
 
   >This script will create a "framework" database with a demo dataset. User access information is available at the beginning of this script.
 
-- Modify  *config/global.php* with :
+- Modify  *.env* with :
     - Constants starting with MAIL to use the [PHPMailer](https://github.com/PHPMailer/PHPMailer) and [Mailtrap](https://mailtrap.io/) section
     - Constants starting with DATABASE for the PDO part and database connection.
 
