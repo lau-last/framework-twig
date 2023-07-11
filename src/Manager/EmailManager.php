@@ -18,11 +18,11 @@ final class EmailManager
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = MAIL_HOST;
+            $mail->Host = getenv("MAIL_HOST");
             $mail->SMTPAuth = true;
-            $mail->Port = MAIL_PORT;
-            $mail->Username = MAIL_USERNAME;
-            $mail->Password = MAIL_PASSWORD;
+            $mail->Port = getenv("MAIL_PORT");
+            $mail->Username = getenv("MAIL_USERNAME");
+            $mail->Password = getenv("MAIL_PASSWORD");
             $mail->setFrom(trim($input['email']), 'Mailer');
             $mail->addAddress('laurent@gmail.com');
             $mail->isHTML(true);
@@ -50,11 +50,11 @@ final class EmailManager
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = MAIL_HOST;
+            $mail->Host = getenv("MAIL_HOST");
             $mail->SMTPAuth = true;
-            $mail->Port = MAIL_PORT;
-            $mail->Username = MAIL_USERNAME;
-            $mail->Password = MAIL_PASSWORD;
+            $mail->Port = getenv("MAIL_PORT");
+            $mail->Username = getenv("MAIL_USERNAME");
+            $mail->Password = getenv("MAIL_PASSWORD");
             $mail->setFrom('No-Reply@exemple.com', 'Mailer');
             $mail->addAddress(trim($input['email']));
             $mail->isHTML(true);

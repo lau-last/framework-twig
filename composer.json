@@ -16,7 +16,8 @@
     "require": {
       "ext-pdo": "*",
         "phpmailer/phpmailer": "^6.8",
-        "twig/twig": "^3.6"
+        "twig/twig": "^3.6",
+        "devcoder-xyz/php-dotenv": "^2.1"
     },
     "require-dev": {
         "symfony/var-dumper": "^6.3",
