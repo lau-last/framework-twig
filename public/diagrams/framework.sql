@@ -7,6 +7,20 @@
 -- Server version: 5.7.24
 -- PHP Version: 8.1.0
 
+-- Passwords and users for the demo
+--    - User Laurent
+--      - Email : laurent@gmail.com
+--      - Password : azAZ@123
+--      - Role : admin
+--    - User Aurélie
+--      - Email : aurelie@gmail.com
+--      - Password : azAZ@123
+--      - Role : user
+--    - User Sandrine
+--      - Email : sandrine@gmail.com
+--      - Password : azAZ@123
+--      - Role : user
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
