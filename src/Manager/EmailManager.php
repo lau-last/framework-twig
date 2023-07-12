@@ -10,6 +10,88 @@ final class EmailManager
 
 
     /**
+     * @param array $input
+     * @return bool
+     */
+    private function isValidName(array $input): bool
+    {
+        return (isset($input['name']) && strlen($input['name']) > 2);
+    }
+
+
+    /**
+     * @param array $input
+     * @return bool
+     */
+    private function isValidFirstName(array $input): bool
+    {
+        return (isset($input['first-name']) && strlen($input['first-name']) > 2);
+    }
+
+
+    /**
+     * @param array $input
+     * @return bool
+     */
+    private function isValidSubject(array $input): bool
+    {
+        return (isset($input['subject']) && strlen($input['subject']) > 4);
+    }
+
+
+    /**
+     * @param array $input
+     * @return bool
+     */
+    private function isValidMessage(array $input): bool
+    {
+        return (isset($input['subject']) && strlen($input['subject']) > 29);
+    }
+
+
+    /**
+     * @param array $input
+     * @return bool
+     */
+    private function checkEmail(array $input): bool
+    {
+        return (isset($input['email']) && filter_var($input['email'], FILTER_VALIDATE_EMAIL));
+    }
+
+
+    /**
+     * @param array $input
+     * @return array
+     */
+    public function isValidFormContact(array $input): array
+    {
+
+        $errors = [];
+        if($this->isValidName($input) === false) {
+            $errors['name'] = 'Your name must contain at least 3 characters';
+        }
+
+        if($this->isValidFirstName($input) === false) {
+            $errors['first-name'] = 'Your first name must contain at least 3 characters';
+        }
+
+        if($this->isValidSubject($input) === false) {
+            $errors['subject'] = 'Your subject must contain at least 5 characters';
+        }
+
+        if($this->isValidMessage($input) === false) {
+            $errors['name'] = 'Your message must contain at least 30 characters';
+        }
+
+        if ($this->checkEmail($input) === false) {
+            $errors['email'] = 'The email address is not valid';
+        }
+
+        return $errors;
+    }
+
+
+    /**
      * @param $input
      * @return bool
      */
@@ -23,7 +105,7 @@ final class EmailManager
             $mail->Port = getenv("MAIL_PORT");
             $mail->Username = getenv("MAIL_USERNAME");
             $mail->Password = getenv("MAIL_PASSWORD");
-            $mail->setFrom(trim($input['email']), 'Mailer');
+            $mail->setFrom(trim($input['email']), trim($input['first-name'] . ' ' . trim($input['name'])));
             $mail->addAddress('laurent@gmail.com');
             $mail->isHTML(true);
             $mail->Subject = trim($input['subject']);

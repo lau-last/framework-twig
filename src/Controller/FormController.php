@@ -10,6 +10,7 @@ use App\Manager\UserManager;
 use App\SessionBlog\SessionBlog;
 use Core\Controller\Controller;
 use Core\Http\Request;
+use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -104,6 +105,7 @@ final class FormController extends Controller
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
+     * @throws Exception
      */
     public function showFormCreationArticle(): void
     {
@@ -111,7 +113,7 @@ final class FormController extends Controller
             $this->render('creation-article.twig');
             return;
         }
-        $this->redirect('/403');
+        throw new Exception('403');
     }
 
 
@@ -140,6 +142,12 @@ final class FormController extends Controller
     {
         $data = [];
         $request = new Request();
+        $errors = (new EmailManager())->isValidFormContact($request->getPost());
+        if (empty($errors) === false) {
+            $data['errors'] = $errors;
+            $this->render('home.twig', $data);
+            return;
+        }
         $messages = (new EmailManager())->doSendEmailContact($request->getPost()) ? 'Message has been sent' : 'Message could not be sent';
         $data['messages'] = $messages;
         $this->render('home.twig', $data);

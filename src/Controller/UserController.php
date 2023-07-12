@@ -7,6 +7,7 @@ use App\Manager\UserManager;
 use App\SessionBlog\SessionBlog;
 use Core\Controller\Controller;
 use Core\Http\Request;
+use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -20,6 +21,7 @@ final class UserController extends Controller
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
+     * @throws Exception
      */
     public function showAllUser(): void
     {
@@ -31,7 +33,7 @@ final class UserController extends Controller
             $this->render('management-user.twig', $data);
             return;
         }
-        $this->redirect('/403');
+        throw new Exception('403');
     }
 
 
@@ -113,6 +115,7 @@ final class UserController extends Controller
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
+     * @throws Exception
      */
     public function showProfile(): void
     {
@@ -124,7 +127,7 @@ final class UserController extends Controller
             $this->render('profile.twig', $data);
             return;
         }
-        $this->redirect('/403');
+        throw new Exception('403');
     }
 
 

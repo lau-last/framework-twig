@@ -6,6 +6,7 @@ use App\Manager\CommentManager;
 use App\Manager\UserManager;
 use Core\Controller\Controller;
 use Core\Http\Request;
+use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -32,6 +33,7 @@ final class CommentController extends Controller
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
+     * @throws Exception
      */
     public function showAll(): void
     {
@@ -41,7 +43,7 @@ final class CommentController extends Controller
             $this->render('management-comment.twig', $data);
             return;
         }
-        $this->redirect('/403');
+        throw new Exception('403');
     }
 
 

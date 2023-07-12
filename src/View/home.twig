@@ -28,7 +28,22 @@
                 {% if messages != null %}
                     <div class="alert alert-warning text-center mt-5" role="alert">{{ messages }}</div>
                 {% endif %}
-                <form action="/do-contact" method="post">
+                {% if errors != null %}
+                    {% for error in errors %}
+                        <div class="alert alert-warning text-center" role="alert">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+                <form action="/do-contact" method="post" class="mt-5">
+                    <div class="row">
+                        <div class="col-md">
+                            <label for="first-name" class="form-label">Your first name</label>
+                            <input type="text" name="first-name" id="first-name" class="form-control mb-3" required>
+                        </div>
+                        <div class="col-md">
+                            <label for="name" class="form-label">Your name</label>
+                            <input type="text" name="name" id="name" class="form-control mb-3" required>
+                        </div>
+                    </div>
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" name="email" id="email" class="form-control mb-3" required>
                     <label for="subject" class="form-label">subject</label>
