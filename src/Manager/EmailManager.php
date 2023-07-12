@@ -67,19 +67,19 @@ final class EmailManager
     {
 
         $errors = [];
-        if($this->isValidName($input) === false) {
+        if ($this->isValidName($input) === false) {
             $errors['name'] = 'Your name must contain at least 3 characters';
         }
 
-        if($this->isValidFirstName($input) === false) {
+        if ($this->isValidFirstName($input) === false) {
             $errors['first-name'] = 'Your first name must contain at least 3 characters';
         }
 
-        if($this->isValidSubject($input) === false) {
+        if ($this->isValidSubject($input) === false) {
             $errors['subject'] = 'Your subject must contain at least 5 characters';
         }
 
-        if($this->isValidMessage($input) === false) {
+        if ($this->isValidMessage($input) === false) {
             $errors['name'] = 'Your message must contain at least 30 characters';
         }
 

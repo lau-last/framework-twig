@@ -15,10 +15,10 @@ try {
     (new \Core\Router\Router(require ROOT . '/config/routes.php'))->run(new \Core\Http\Request());
 } catch (Exception $e) {
     $errorController = new \App\Controller\ErrorController();
-    if ($e->getMessage() == '404') {
+    if ($e->getMessage() === '404') {
         $errorController->show404();
     }
-    if ($e->getMessage() == '403') {
+    if ($e->getMessage() === '403') {
         $errorController->show403();
     }
 }
