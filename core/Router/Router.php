@@ -3,7 +3,7 @@
 namespace Core\Router;
 
 use Core\Http\Request;
-
+use Exception;
 
 class Router
 {
@@ -26,14 +26,17 @@ class Router
     /**
      * @param Request $request
      * @return void
+     * @throws Exception
      */
     public function run(Request $request): void
     {
         foreach ($this->routes as $route) {
             if ($route->matches($request)) {
                 $route->callAction();
+                return;
             }
         }
+        throw new Exception('404');
     }
 
 

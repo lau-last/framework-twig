@@ -7,6 +7,7 @@ use App\Manager\ArticleManager;
 use App\Manager\UserManager;
 use Core\Controller\Controller;
 use Core\Http\Request;
+use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -62,6 +63,7 @@ final class ArticleController extends Controller
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
+     * @throws Exception
      */
     public function modifyArticle(): void
     {
@@ -72,7 +74,7 @@ final class ArticleController extends Controller
             $this->render('management-article.twig', $data);
             return;
         }
-        $this->redirect('/403');
+        throw new Exception('403');
     }
 
 

@@ -23,4 +23,16 @@ final class ErrorController extends Controller
     }
 
 
+    /**
+     * @return void
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function show404(): void
+    {
+        $this->render('404.twig');
+    }
+
+
 }
