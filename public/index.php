@@ -18,6 +18,7 @@ try {
     if ($e->getMessage() === '404') {
         $errorController->show404();
     }
+
     if ($e->getMessage() === '403') {
         $errorController->show403();
     }
