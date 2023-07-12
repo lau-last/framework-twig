@@ -17,7 +17,20 @@ To install the project on your machine, follow these steps:
     - Constants starting with MAIL to use the [PHPMailer](https://github.com/PHPMailer/PHPMailer) and [Mailtrap](https://mailtrap.io/) section
     - Constants starting with DATABASE for the PDO part and database connection.
 
+### Passwords and users
+- User Laurent
+  - Email : laurent@gmail.com
+  - Password : azAZ@123
+  - Role : admin
+- User Aurélie
+  - Email : aurelie@gmail.com
+  - Password : azAZ@123
+  - Role : user
+- User Sandrine
+  - Email : sandrine@gmail.com
+  - Password : azAZ@123
+  - Role : user
 
 ### Everything is ready!
-Once Apache and MySQL are running, the blog will be accessible (by default at: http://localhost:8888).
+Once Apache and MySQL are running, the blog will be accessible (by default at: http://localhost:8888) or go to the public folder and run the command php -S localhost:8000.
  
