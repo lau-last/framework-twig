@@ -65,9 +65,10 @@ final class Notification
      */
     public static function notificationConnection(): string
     {
-        if ((new UserManager())->userIsConnected() === true ) {
+        if ((new UserManager())->userIsConnected() === true) {
             return 'Connected';
         }
+
         return 'Offline';
     }
 

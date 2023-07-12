@@ -43,6 +43,7 @@ final class Delete
         foreach ($where as $arg) {
             $this->where[] = $arg;
         }
+
         return $this;
     }
 

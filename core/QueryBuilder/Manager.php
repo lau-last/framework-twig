@@ -21,6 +21,7 @@ final class Manager
                 $stmt->bindValue($key, $value);
             }
         }
+
         $stmt->execute();
         return $stmt;
     }

@@ -28,6 +28,7 @@ abstract class Hydrate
                 $key = explode('_', $key, 2);
                 $key = ($key[0] . ucfirst($key[1]));
             }
+
             $method = 'set' . \ucfirst($key);
             if (\method_exists($this, $method) === true) {
                 $this->$method($value);

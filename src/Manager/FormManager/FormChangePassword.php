@@ -37,12 +37,15 @@ final class FormChangePassword
         if ($this->checkPassword($input) === false) {
             $errors['password'] = 'Passwords do not match';
         }
+
         if ($this->validPassword($input) === false) {
             $errors['regex'] = 'Your password must contain at least 8 characters, one uppercase, one lowercase and one special character';
         }
+
         if ($this->checkPassword($input) === true && $this->validPassword($input) === true) {
             $errors['good'] = 'Your password has been successfully updated';
         }
+
         return $errors;
     }
 

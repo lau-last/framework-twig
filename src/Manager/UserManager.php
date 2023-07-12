@@ -43,6 +43,7 @@ final class UserManager extends UserEntity
         if (empty(SessionBlog::get('name')) === false) {
             return true;
         }
+
         return false;
     }
 

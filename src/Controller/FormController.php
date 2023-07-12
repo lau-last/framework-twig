@@ -47,6 +47,7 @@ final class FormController extends Controller
             $this->render('connection.twig', $data);
             return;
         }
+
         $this->redirect('/');
     }
 
@@ -91,6 +92,7 @@ final class FormController extends Controller
             $this->render('registration.twig', $data);
             return;
         }
+
         (new UserManager())->doPreRegistration($request->getPost());
         $messages = (new EmailManager())->doSendEmailValidation($request->getPost()) ?
             'Message has been sent for validation' :
@@ -113,6 +115,7 @@ final class FormController extends Controller
             $this->render('creation-article.twig');
             return;
         }
+
         throw new Exception('403');
     }
 
@@ -148,6 +151,7 @@ final class FormController extends Controller
             $this->render('home.twig', $data);
             return;
         }
+
         $messages = (new EmailManager())->doSendEmailContact($request->getPost()) ? 'Message has been sent' : 'Message could not be sent';
         $data['messages'] = $messages;
         $this->render('home.twig', $data);

@@ -72,6 +72,7 @@ final class ArticleManager extends ArticleEntity
         foreach ($data as $result) {
             $articles[] = new ArticleManager($result);
         }
+
         return $articles;
     }
 

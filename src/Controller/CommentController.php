@@ -43,6 +43,7 @@ final class CommentController extends Controller
             $this->render('management-comment.twig', $data);
             return;
         }
+
         throw new Exception('403');
     }
 

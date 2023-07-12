@@ -22,6 +22,7 @@ final class FormConnection
             if ($userInfo === null || $userInfo->getValidation() !== 'valid') {
                 return false;
             }
+
             if (password_verify($password, $userInfo->getPassword()) === true) {
                 if (password_needs_rehash($userInfo->getPassword(), PASSWORD_BCRYPT) === true) {
                     $password = password_hash($password, PASSWORD_BCRYPT);

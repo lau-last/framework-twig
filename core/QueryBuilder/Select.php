@@ -77,6 +77,7 @@ final class Select
         foreach ($where as $arg) {
             $this->where[] = $arg;
         }
+
         return $this;
     }
 

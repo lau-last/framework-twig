@@ -36,6 +36,7 @@ class Router
                 return;
             }
         }
+
         throw new Exception('404');
     }
 

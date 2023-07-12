@@ -26,6 +26,7 @@ abstract class Session
         if (isset($_SESSION[$key]) === true) {
             return $_SESSION[$key];
         }
+
         return null;
     }
 

@@ -56,6 +56,7 @@ final class CommentManager extends CommentEntity
         foreach ($dataComment as $result) {
             $comments[] = new CommentManager($result);
         }
+
         return $comments;
     }
 

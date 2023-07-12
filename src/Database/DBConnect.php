@@ -21,6 +21,7 @@ final class DBConnect
         if (self::$pdo === null) {
             self::$pdo = new PDO(getenv("DATABASE_DNS"), getenv("DATABASE_USER"), getenv("DATABASE_PASSWORD"));
         }
+
         return self::$pdo;
     }
 

@@ -60,8 +60,10 @@ class Route
                 \array_shift($matches);
                 $this->params = $matches;
             }
+
             return true;
         }
+
         return false;
     }
 

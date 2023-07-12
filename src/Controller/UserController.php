@@ -33,6 +33,7 @@ final class UserController extends Controller
             $this->render('management-user.twig', $data);
             return;
         }
+
         throw new Exception('403');
     }
 
@@ -127,6 +128,7 @@ final class UserController extends Controller
             $this->render('profile.twig', $data);
             return;
         }
+
         throw new Exception('403');
     }
 

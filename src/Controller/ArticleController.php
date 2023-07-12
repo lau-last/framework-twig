@@ -74,6 +74,7 @@ final class ArticleController extends Controller
             $this->render('management-article.twig', $data);
             return;
         }
+
         throw new Exception('403');
     }
 
