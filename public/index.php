@@ -1,5 +1,7 @@
 <?php
 
+use Config\Routes;
+
 define('ROOT', \dirname(__DIR__));
 
 // error_reporting(E_ALL);
@@ -12,7 +14,7 @@ require_once '../vendor/autoload.php';
 \App\SessionBlog\SessionBlog::start();
 
 try {
-    (new \Core\Router\Router(require ROOT . '/config/routes.php'))->run(new \Core\Http\Request());
+    (new \Core\Router\Router(Routes::get()))->run(new \Core\Http\Request());
 } catch (Exception $e) {
     $errorController = new \App\Controller\ErrorController();
     if ($e->getMessage() === '404') {
